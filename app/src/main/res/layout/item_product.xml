@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.application.samcomprac.room.ProductModel" />
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_4"
+        android:layout_marginTop="@dimen/margin_6"
+        android:layout_marginEnd="@dimen/margin_4"
+        android:layout_marginBottom="@dimen/margin_6"
+        app:cardCornerRadius="@dimen/radius_2"
+        android:background="@android:color/white"
+        app:cardElevation="@dimen/radius_2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="@dimen/padding_4">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/margin_8"
+                    android:layout_marginEnd="@dimen/margin_8"
+                    android:text="@{viewModel.name}"
+                    tools:text="John Doe" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="@dimen/margin_8" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/aiv_cover_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/size_90"
+                android:layout_marginTop="@dimen/margin_8"
+                app:srcCompat="@drawable/img" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_8"
+                android:text="@{`Price `+viewModel.price}"
+                tools:text="John Doe" />
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8"
+                android:layout_gravity="center_horizontal"
+                app:cornerRadius="@dimen/margin_12"
+                android:text="Add"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_8"
+                android:text="Standard Delivery"
+                tools:text="John Doe" />
+
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>
